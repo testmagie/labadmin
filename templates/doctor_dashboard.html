@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Doctor Dashboard</title>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flash-messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <h2>Doctor Dashboard</h2>
+    <form method="POST" action="/doctor/view_patient">
+        <input type="text" name="patient_id" placeholder="Enter Patient ID or Name">
+        <button type="submit">View Patient Details</button>
+    </form>
+    <a href="/doctor/appointments">View Today's Appointments</a>
+</body>
+
+</html>
